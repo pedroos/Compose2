@@ -3,9 +3,9 @@
   "name": "compose2",
   "version": "0.0.1",
   "description": "Compose2",
-  "main": "src/index.js",
+  "main": "index.js",
   "scripts": {
-    "test": "node src/runtests.js"
+    "test": "node runtests.mjs"
   },
   "author": "",
   "license": "ISC"

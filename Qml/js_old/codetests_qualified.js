@@ -1,12 +1,21 @@
-import { types, isType, withType, times, seqEq, ElementDoesntExistException, recur1, queue, depthFirst, breadthFirst, node } from './code.js'
-import { assT, assF, assEq, assSeqEq } from './tests.js'
+//import { types, isType, withType, times, seqEq, ElementDoesntExistException, recur1, queue, depthFirst, breadthFirst, node } from './code.js'
+//import { assT, assF, assEq, assSeqEq } from './tests.js'
+
+.import "code.js" as Code
+.import "tests.js" as Tests
+
+.pragma library
 
 const typeTests = () => {
-    assEq(withType(types.ElementDoesntExistException).type, types.ElementDoesntExistException, 'type1')
-    assT(isType(withType(types.ElementDoesntExistException), types.ElementDoesntExistException), 'type2')
-    assF(isType(withType(types.ElementDoesntExistException), 'sometype'), 'type3')
-    assEq(withType(types.ElementDoesntExistException, type => ({typeNameUpper: type.toUpperCase()}))
-        .typeNameUpper, types.ElementDoesntExistException.toUpperCase(), 'type4')
+    Tests.assEq(Code.withType(Code.types.ElementDoesntExistException).type,
+        Code.types.ElementDoesntExistException, 'type1')
+    Tests.assT(Code.isType(Code.withType(Code.types.ElementDoesntExistException),
+        Code.types.ElementDoesntExistException), 'type2')
+    Tests.assF(Code.isType(Code.withType(Code.types.ElementDoesntExistException),
+        'sometype'), 'type3')
+    Tests.assEq(Code.withType(Code.types.ElementDoesntExistException,
+        type => ({typeNameUpper: type.toUpperCase()}))
+        .typeNameUpper, Code.types.ElementDoesntExistException.toUpperCase(), 'type4')
 }
 
 const timesTests = () => {
@@ -15,15 +24,18 @@ const timesTests = () => {
 }
 
 const seqEqTests = () => {
-    assT(seqEq([1, 2, 3, 4], [1, 2, 3, 4]), 'seqEq1')
-    assF(seqEq([1, 2, 3, 4], [1, 2, 3]), 'seqEq2')
-    assF(seqEq([1, 2, 3, 4], [1, 2, 3, 5]), 'seqEq3')
+    Tests.assT(seqEq([1, 2, 3, 4], [1, 2, 3, 4]), 'seqEq1')
+    Tests.assF(seqEq([1, 2, 3, 4], [1, 2, 3]), 'seqEq2')
+    Tests.assF(seqEq([1, 2, 3, 4], [1, 2, 3, 5]), 'seqEq3')
 }
 
 const exceptionTests = () => {
-    assT(isType(ElementDoesntExistException(), types.ElementDoesntExistException), 'exception1')
-    assT(ElementDoesntExistException().msg === types.ElementDoesntExistException, 'exception1b')
-    assEq(ElementDoesntExistException('where1').msg, types.ElementDoesntExistException + " where1",
+    Tests.assT(Code.isType(elementDoesntExistException(), Code.types.ElementDoesntExistException),
+        'exception1')
+    Tests.assT(elementDoesntExistException().msg === Code.types.ElementDoesntExistException,
+        'exception1b')
+    Tests.assEq(elementDoesntExistException('where1').msg,
+        Code.types.ElementDoesntExistException + " where1",
         'exception1c')
 }
 
@@ -31,10 +43,10 @@ const queueTests = () => {
     const q = queue()
     q.enqueue(1)
     q.enqueue(2)
-    assEq(q.dequeue(), 1, 'queue1')
-    assEq(q.dequeue(), 2, 'queue1b')
-    assT(isType(q.dequeue(), types.ElementDoesntExistException), 'queue1c')
-    assEq(q.dequeue().msg, types.ElementDoesntExistException, 'queue1d')
+    Tests.assEq(q.dequeue(), 1, 'queue1')
+    Tests.assEq(q.dequeue(), 2, 'queue1b')
+    Tests.assT(Code.isType(q.dequeue(), Code.types.ElementDoesntExistException), 'queue1c')
+    Tests.assEq(q.dequeue().msg, Code.types.ElementDoesntExistException, 'queue1d')
 }
 
 const treeTests = () => {
@@ -115,4 +127,4 @@ const treeTests = () => {
     assSeqEq(path.map(df => df.level), [0, 1, 2, 2, 3], 'breadthFirst3Lvl')
 }
 
-export { typeTests, seqEqTests, timesTests, exceptionTests, queueTests, treeTests }
+//export { typeTests, seqEqTests, timesTests, exceptionTests, queueTests, treeTests }
