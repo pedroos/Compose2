@@ -5,7 +5,7 @@
   "description": "Compose2",
   "main": "src/index.js",
   "scripts": {
-    "test": "node src/runtests.js"
+    "test": "node src/alltests.js"
   },
   "author": "",
   "license": "ISC",

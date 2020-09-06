@@ -1,7 +1,7 @@
 import QtQuick 2.15
 import QtQuick.Window 2.15
 
-import "js/runtests.mjs" as RunTests
+import "js/alltests.mjs" as AllTests
 
 Window {
     width: 640
@@ -10,6 +10,6 @@ Window {
     title: qsTr("Hello World")
 
     Text {
-        text: RunTests.runTests()
+        text: AllTests.allTests().map(t => t().join('\n')).join('\n')
     }
 }

@@ -1,0 +1,10 @@
+<RCC>
+    <qresource prefix="/">
+<file>js/alltests.mjs</file>
+<file>js/code.mjs</file>
+<file>js/codetests.mjs</file>
+<file>js/tests.mjs</file>
+<file>js/token.mjs</file>
+<file>js/tokentests.mjs</file>
+    </qresource>
+</RCC>

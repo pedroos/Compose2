@@ -12,15 +12,17 @@ import { typeTests, seqEqTests, timesTests, exceptionTests, queueTests, treeTest
 
 //[[[end]]]
 
-const runTests = () => {
-  typeTests();
-  seqEqTests();
-  timesTests();
-  exceptionTests();
-  queueTests();
-  treeTests();
+const allTests = () => [
+typeTests,
+seqEqTests,
+timesTests,
+exceptionTests,
+queueTests,
+treeTests
 
-  // evaluateTests(0)
-};
+// evaluateTests(0)
+];
 
-runTests();
+console.log(allTests().map(t => t().join('\n')).join('\n'));
+
+export { allTests };
