@@ -1,0 +1,1 @@
+npx babel -w src --out-dir ../../Qml/js --relative --out-file-extension .mjs

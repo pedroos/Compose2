@@ -7,12 +7,5 @@
         <file>js/tests.mjs</file>
         <file>js/token.mjs</file>
         <file>js/tokentests.mjs</file>
-        <file>js_old/code.mjs</file>
-        <file>js_old/codetests.mjs</file>
-        <file>js_old/codetests_qualified.js</file>
-        <file>js_old/runtests.js</file>
-        <file>js_old/tests.js</file>
-        <file>js_old/token.js</file>
-        <file>js_old/tokentests.js</file>
     </qresource>
 </RCC>

@@ -1,5 +1,5 @@
 {
-  "type": "module", 
+  "type": "module",
   "name": "compose2",
   "version": "0.0.1",
   "description": "Compose2",
@@ -8,5 +8,14 @@
     "test": "node src/runtests.js"
   },
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/cli": "^7.11.6",
+    "@babel/core": "^7.11.6",
+    "@babel/preset-env": "^7.11.5",
+    "@babel/preset-es2017": "^7.0.0-beta.53"
+  },
+  "dependencies": {
+    "@babel/polyfill": "^7.11.5"
+  }
 }

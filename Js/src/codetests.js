@@ -1,16 +1,17 @@
 /*[[[cog
 import cog, pathlib
 ext=pathlib.Path(cog.inFile).suffix
-cog.out("""
-import {{ types, isType, withType, times, seqEq, ElementDoesntExistException, recur1, queue, depthFirst, breadthFirst, 
+cog.outl("""
+import {{ types, isType, withType, times, seqEq, elementDoesntExistException, recur1, queue, depthFirst, breadthFirst,
     node }} from './code{ext}'
 import {{ assT, assF, assEq, assSeqEq }} from './tests{ext}'
 """.format(ext=ext))
 ]]]*/
 
-import { types, isType, withType, times, seqEq, ElementDoesntExistException, recur1, queue, depthFirst, breadthFirst, 
+import { types, isType, withType, times, seqEq, elementDoesntExistException, recur1, queue, depthFirst, breadthFirst,
     node } from './code.js'
 import { assT, assF, assEq, assSeqEq } from './tests.js'
+
 //[[[end]]]
 
 const typeTests = () => {
@@ -37,11 +38,11 @@ const seqEqTests = () => {
 }
 
 const exceptionTests = () => {
-    assT(isType(ElementDoesntExistException(), types.ElementDoesntExistException),
+    assT(isType(elementDoesntExistException(), types.ElementDoesntExistException),
         'exception1')
-    assT(ElementDoesntExistException().msg === types.ElementDoesntExistException,
+    assT(elementDoesntExistException().msg === types.ElementDoesntExistException,
         'exception1b')
-    assEq(ElementDoesntExistException('where1').msg,
+    assEq(elementDoesntExistException('where1').msg,
         types.ElementDoesntExistException + " where1",
         'exception1c')
 }

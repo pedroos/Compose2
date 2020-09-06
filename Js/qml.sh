@@ -1,10 +1,12 @@
 cog -r src/*.js
 
-npm test
+#npm test
 
-mkdir -p ../Qml/js
-rm -f ../Qml/js/*
-cp src/*.js ../Qml/js
-for f in ../Qml/js/*.js; do echo $f;mv -- "$f" "${f%.js}.mjs" ; done
+# mkdir -p ../Qml/js
+# rm -f ../Qml/js/*
+# cp src/*.js ../Qml/js
+# for f in ../Qml/js/*.js; do echo $f;mv -- "$f" "${f%.js}.mjs" ; done
 
-cog -d -r src/*.mjs
+npx babel src --out-dir ../../Qml/js --relative --out-file-extension .mjs
+
+cog -r ../Qml/js/*.mjs

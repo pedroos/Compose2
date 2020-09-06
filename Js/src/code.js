@@ -23,7 +23,7 @@ const seqEq = (seq1, seq2) => {
     return true
 }
 
-const ElementDoesntExistException = where =>
+const elementDoesntExistException = where =>
     withType(types.ElementDoesntExistException,
         type => ({msg: type + (where !== undefined ? " " + where : "")}))
 
@@ -34,7 +34,7 @@ const queue = () => {
             items.push(item)
         },
         dequeue: () => {
-            if (!(items.length > 0)) return ElementDoesntExistException()
+            if (!(items.length > 0)) return elementDoesntExistException()
             const item = items[0]
             items.splice(0, 1)
             return item
@@ -77,5 +77,5 @@ const node = (id, children) => {
     return nd
 }
 
-export { types, isType, withType, times, seqEq, ElementDoesntExistException, recur1, queue, depthFirst, breadthFirst,
+export { types, isType, withType, times, seqEq, elementDoesntExistException, recur1, queue, depthFirst, breadthFirst,
     node }

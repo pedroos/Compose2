@@ -1,0 +1,5 @@
+{
+  "retainLines": true, 
+  "plugins": ["@babel/plugin-proposal-object-rest-spread"],
+  // "presets": [["es2017"]]
+}

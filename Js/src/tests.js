@@ -1,4 +1,14 @@
+/*[[[cog
+import cog, pathlib
+ext=pathlib.Path(cog.inFile).suffix
+cog.outl("""
+import {{ seqEq }} from './code{ext}'
+""".format(ext=ext))
+]]]*/
+
 import { seqEq } from './code.js'
+
+//[[[end]]]
 
 const assT = (cond, name) => {if (!cond) console.log(name + " FAILED"); else console.log(name + " ok")}
 const assF = (cond, name) => assT(!cond, name)

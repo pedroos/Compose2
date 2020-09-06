@@ -1,4 +1,14 @@
+/*[[[cog
+import cog, pathlib
+ext=pathlib.Path(cog.inFile).suffix
+cog.outl("""
+import {{ depthFirst, node }} from './code{ext}'
+""".format(ext=ext))
+]]]*/
+
 import { depthFirst, node } from './code.js'
+
+//[[[end]]]
 
 const elemType = Object.freeze({
     EitherEager: "EitherEager", 
