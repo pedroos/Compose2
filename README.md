@@ -7,4 +7,6 @@ The project aims to define a small language to describe change functions. As suc
 
 A GUI is also present to explain and facilitate performing the various manipulations with changes visually.
 
+In the below picture, a change tree (on the left) is calculated from an initial object (1, 2, 3, 4) and the function (a + b) with the positional arguments (position1 to +1, position 3 to -1). The functions and rules applied to each node are shown on the right pane.
+
 ![Compose2 demo](demo.gif)
